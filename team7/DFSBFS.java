@@ -1,23 +1,18 @@
 package team7;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
 
-public class Search {
-    List<AdjacencyMatrix> list;
-
-    public Search(List<AdjacencyMatrix> list) {
-        this.list = list;
+public class DFSBFS extends RunSearch {
+    public DFSBFS(List<AdjacencyMatrix> list) {
+        super(list); // 부모 클래스 생성자 호출
     }
 
-    public void run() {
-        int i = 1;
-        for (var m : this.list) {
-            System.out.println("그래프 [ " + i++ + " ]\n");
-            System.out.println("----------------------------");
-            dfs(m);
-            bfs(m);
-            System.out.println("============================\n");
-        }
+    @Override
+    public void searchFunction(AdjacencyMatrix m) {
+        dfs(m); // 깊이 우선 탐색
+        bfs(m); // 너비 우선 탐색
     }
 
     private void dfs(AdjacencyMatrix m) {
@@ -71,4 +66,5 @@ public class Search {
         System.out.println("너비 우선 탐색");
         System.out.println(str);
     }
+
 }

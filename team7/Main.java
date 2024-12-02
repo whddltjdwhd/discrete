@@ -5,7 +5,9 @@ public class Main {
         Input1Reader reader1 = new Input1Reader("res/input1.txt");
         Input2Reader reader2 = new Input2Reader("res/input2.txt");
 
-        Search s = new Search(reader1.getList());
-        s.run();
+        RunSearch dfsbfs = new DFSBFS(reader1.getList());
+        RunSearch dijkstra = new Dijkstra(reader2.getList());
+        dfsbfs.run();
+        dijkstra.run();
     }
 }

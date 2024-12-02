@@ -3,11 +3,14 @@ package team7;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Input2Reader {
     ArrayList<AdjacencyMatrix> list = new ArrayList<>();
-
+    public List<AdjacencyMatrix> getList() {
+        return list;
+    }
     public Input2Reader(String path) {
         try {
             Scanner scanner = new Scanner(new File(path));
